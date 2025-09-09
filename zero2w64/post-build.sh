@@ -36,15 +36,6 @@ fi
 mv ${TARGET_DIR}/etc/init.d/S10mdev ${TARGET_DIR}/etc/init.d/S000mdev || true
 mv ${TARGET_DIR}/etc/init.d/S05avahi-setup.sh ${TARGET_DIR}/etc/init.d/S35avahi-setup.sh || true
 
-echo "Copying ./.wpa_supplicant.conf"
-ROOT_DIR=$(readlink -f ${TARGET_DIR}/../../..)
-if [ -f ${ROOT_DIR}/.wpa_supplicant.conf ]; then
-    cp ${ROOT_DIR}/.wpa_supplicant.conf ${TARGET_DIR}/etc/wpa_supplicant.conf
-    echo "Copied ./.wpa_supplicant.conf"
-else
-    echo "No ./.wpa_supplicant.conf found"
-fi
-
 # echo "Adding user 'zic'..."
 # # Check if the user already exists to prevent duplication
 # if ! grep -q "^zic:" "$TARGET_DIR/etc/passwd"; then
