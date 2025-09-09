@@ -2,11 +2,13 @@ name: Build zicOs Buildroot image (Zero2W 64)
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'zero2w64/**'
-      - 'buildroot/**'
-      - '.github/workflows/build-buildroot.yml'
+#  push:
+#    paths:
+#      - 'zero2w64/**'
+#      - 'buildroot/**'
+#      - '.github/workflows/build-buildroot.yml'
+#
+#    ^------- run manually till account payment has been fixed ^^
 
 concurrency:
   group: buildroot-${{ github.ref }}
